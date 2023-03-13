@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    background-color: lightgray;
+}
+
+h1 {
+    padding-bottom: 1.25rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.accordion {}
+
+.accordion:hover .accordion_on_of::after {
+    opacity: 1;
+}
+
+.accordion_item {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.accordion_item:hover .accordion_content {
+    height: 15.63rem;
+    opacity: 1;
+    /* display: flex;      */
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+.accordion_item:hover .accordion_on_of::after {   
+    transform: rotate(45deg);
+}
+
+.accordion_item:hover .accordion_on_of {
+    color: blue;
+}
+
+.accordion_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+}
+.accordion_img {
+    max-height: 18.75rem;
+
+}
+.accordion_on_of {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    height: 3rem;
+    padding-right: 6rem;
+    border: 0.07rem solid gray;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    position: relative;
+    color: blue;
+
+}
+
+
+.accordion_on_of::after {
+    content: '';
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    margin-top: -0.75rem;
+    background-image: url("/cssBayan/cssBayan/png/icon/plus.svg");
+    opacity: 0;
+    
+
+}
+
+
+
+.accordion_content {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 3s;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+.accordion_input:checked~.accordion_on_of {
+    color: black;
+}
+
+.accordion_img:checked~.accordion_on_of {
+
+    color: black;
+}
+
+
+.accordion_input:checked~.accordion_content {
+    height: 16rem;
+    opacity: 1;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    transition: all 4s;
+
+}
+
+.accordion_input:checked~.accordion_on_of::after {    
+    transform: rotate(45deg);
+}
+
+.accordion_on_of:visited {
+    color: black;
+}
+
+@media only screen and (max-width: 1179px) {
+
+    .accordion_on_of {
+        font-size: 1rem;
+        color: brown;
+        cursor: auto;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        color: chocolate
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    .accordion_on_of {
+        font-size: 0.7rem;
+        color: darkgreen;
+        cursor: auto;
+    }
+
+    h1 {
+        font-size: 1rem;
+        color: green
+    }
+}
